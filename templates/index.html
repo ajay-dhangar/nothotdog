@@ -1,51 +1,67 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Hot dog or Not Hot dog?</title>
 
     <style>
       body {
         font-family: Arial, sans-serif;
         text-align: center;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
       }
 
       h1 {
         margin-top: 50px;
+        color: #333;
+        font-size: 2.5rem;
       }
 
       form {
-        margin: auto;
-        width: 400px
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        margin: 20px auto;
       }
 
       input[type="file"] {
         margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        width: 100%;
       }
 
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        width: 100%;
+        font-size: 1rem;
+      }
 
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
     </style>
-
   </head>
   <body>
     <h1>Hot dog or Not Hot dog?</h1>
-    <form
-      method="post"
-      action="{{ url_for('upload') }}"
-      enctype="multipart/form-data"
-    >
-      <input type="file" name="file1" />
+
+    <form method="post" action="{{ url_for('upload') }}" enctype="multipart/form-data">
+      <label for="file1">Upload an image:</label>
+      <input type="file" name="file1" id="file1" accept="image/*" required />
       <input type="submit" value="Submit" />
     </form>
   </body>
