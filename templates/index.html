@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Hot dog or Not Hot dog?</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      h1 {
+        margin-top: 50px;
+      }
+
+      form {
+        margin: auto;
+        width: 400px
+      }
+
+      input[type="file"] {
+        margin-bottom: 20px;
+      }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+
+  </head>
+  <body>
+    <h1>Hot dog or Not Hot dog?</h1>
+    <form
+      method="post"
+      action="{{ url_for('upload') }}"
+      enctype="multipart/form-data"
+    >
+      <input type="file" name="file1" />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
